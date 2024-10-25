@@ -1,0 +1,48 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #ffffff;
+    --background-color: #000000;
+    --text-color: white;
+    --logo-width: 250px;
+    --logo-gap: 10px;
+    --header-height: 100vh;
+    --fade-duration: 2s; /* Duração da transição */
+    --fade-delay: 5s; /* Tempo de espera para começar */
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+}header {
+    position: relative;
+    text-align: center;
+    color: var(--text-color);
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}#logo {
+    justify-content: center;
+    align-items: center;
+    gap: var(--logo-gap);
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity var(--fade-duration) ease-in;
+    animation: fadeIn var(--fade-duration) ease-in var(--fade-delay) forwards;
+}#logo img {
+    width: var(--logo-width);
+    height: auto;
+}@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
